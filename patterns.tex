@@ -1,0 +1,19 @@
+\documentclass{article}
+\title{Dots and Boxes Design Patterns}
+\author{Adam Vandolder}
+\begin{document}
+    \section{Polymorphism}
+    The Dots and Boxes game, as given in the project description, has a fairly
+    straightforward use-case of the Polymorphism pattern when it comes to having
+    both human and computer players. Essentially, you need to create an abstract
+    (a.k.a polymorphic) interface that represents a generic player. You then
+    have separate classes for the human and computer players, both of which
+    implement that interface. The game can then holds two references to the
+    player interface, so from its perspective all players, regardless of whether
+    they are a human or a computer, are the same. This would allow for much 
+    simpler and straightforward game functions, because you would otherwise need
+    to keep track of which player was a human and which was a computer and be
+    constantly branching based on their type in order to call the correct player
+    functions.
+    \section{}
+\end{document}
