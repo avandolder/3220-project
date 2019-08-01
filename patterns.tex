@@ -2,6 +2,7 @@
 \title{Dots and Boxes Design Patterns}
 \author{Adam Vandolder}
 \begin{document}
+    \maketitle
     \section{Polymorphism}
     The Dots and Boxes game, as given in the project description, has a fairly
     straightforward use-case of the Polymorphism pattern when it comes to having
@@ -15,5 +16,23 @@
     to keep track of which player was a human and which was a computer and be
     constantly branching based on their type in order to call the correct player
     functions.
-    \section{}
+    \newpage
+    \section{Creator}
+    Creator is a GRASP pattern designed to solve the problem of deciding who is 
+    responsible for creating new instances of a class. Creator is a fundamental
+    concern of object-oriented programming, and as such should be considered
+    whenever you need to instantiate new objects. When designing our class
+    diagram, Creator should be on your mind when creating aggregations and
+    compositions. When following the Creator pattern, class A should be the
+    creator of class B if it meets any of the following criteria:
+    \begin{itemize}
+        \item A compositely aggregates B
+        \item A records B
+        \item A closely uses B
+        \item or if A is an Expert with respect to creating B
+    \end{itemize}
+    It's useful because, if done well, it can help with maintaining low coupling
+    and high cohesion between your classes, as well as improving encapsulation
+    and reusability. One example of how the Creator pattern
+
 \end{document}
