@@ -64,6 +64,28 @@
     The Observer pattern is often featured as a key part of
     Model-View-Controller architectures.
     \newpage
+    \subsection{Controller Pattern}
+    The Controller pattern is one of the most important GRASP design patterns.
+    It is intended to solve the problem of determining which class should be the
+    first to receive and coordinate external operations, such as UI and input
+    events. It does this by having a controller class, which acts as this first
+    object that is responsible for receiving and handling system operations.
+    This class represents the overall system or part of the system dealing with
+    a particular subject, or alternatively can represent a specific use case
+    scenario. The controller should mainly be delegating responsibilities to
+    other classes; it should not perform much work itself.\\
+    The Controller pattern is useful because it allows you to separate the
+    overall coordination logic into one centralized class, as opposed to having
+    spread out across the system, which increases cohesion and lowers coupling.
+    The pattern also allows you to group all interaction with the system or UI
+    into one place, also increasing cohesion and decreasing coupling.\\
+    The controller pattern is extremely common, and as such there are many
+    examples of it one can find. The most prominent of such examples is in the
+    Model-View-Controller architecture, where the controller pattern features in
+    the name. Under the MVC architecture, the controller is a set of classes
+    designed to facilitate the interaction between the UI and system (the View)
+    and the underlying data (the Model).
+    \newpage
     \subsection{Decorator Pattern}
     The Decorator pattern is one of the Gang of Four design patterns that allows
     additional behaviour to be added onto a single object of a class
