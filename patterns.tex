@@ -1,8 +1,13 @@
 \documentclass{article}
+\usepackage{graphicx}
 \title{COMP-3220 Project}
 \author{Adam Vandolder}
 \begin{document}
+    \pagenumbering{gobble}
     \maketitle
+    \tableofcontents
+    \newpage
+    \pagenumbering{arabic}
     \linespread{1.6}
     \selectfont
     \section{Design Patterns}
@@ -132,4 +137,40 @@
     variables.
     \newpage
     \section{Dots and Boxes}
+    \begin{figure}[h!]
+        \includegraphics[width=\linewidth]{class_diagram.png}
+    \end{figure}
+    I utilized various design patterns in following ways:
+    \begin{itemize}
+        \item \emph{Polymorphism}: I used polymorphism for both the Viewer and
+              the Player classes. This allows me to have the GameController hold
+              instances of the abstract Viewer/Player classes, without needing
+              to know explicitly which type of Player or Viewer they are. This
+              means that the logic of which Player or Viewer to use can happen
+              entirely with dynamic dispatch, as opposed to needing multiple
+              explicit checks.
+        \item \emph{Creator}: I used the Creator pattern when deciding what the
+              relationship between the various classes should be. For instance,
+              I made the Board class compositely aggregate the Edge and Box
+              classes so that, when following the Creator pattern, it was clear
+              that the Board should be the one instantiating them.
+        \item \emph{Controller}: The GameController class is a clear instance
+              usage of the Controller pattern. It acts as a coordinator of the
+              entire system, allowing interaction between the Players and the
+              Board without them needing to hold explicit references to each
+              other. It also handles the interaction with the system operations,
+              through the Viewer classes.
+        \item \emph{Singleton}: I structured the GameController class to follow
+              the Singleton pattern. Since the GameController coordinates the
+              entire system, including input/output, it doesn't make sense for
+              there to be more one at any time. Making GameController a
+              singleton allows for this, without having to resort to global
+              variables.
+        \item \emph{Builder}: I utilized the Builder pattern when I designed the
+              BoardBuilder class. The Board class is relatively complicated,
+              with a number of different objects it is made up, so in order
+              to make it's creation more straightforward and in order to reduce
+              coupling between the Board and GameController classes, the
+              BoardBuilder class can be used to create new board instances.
+    \end{itemize}
 \end{document}
