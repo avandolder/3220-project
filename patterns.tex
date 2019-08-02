@@ -51,24 +51,6 @@
     you represent the board spaces without having to alter anything outside of
     the board class, decreasing coupling and improving encapsulation.
     \newpage
-    \subsection{Observer Pattern}
-    The Observer pattern is one of the Gang of Four design patterns, that was
-    created in order to solve the problem of wanting multiple disparate objects
-    to be able to respond to events from a single central publisher object in a
-    lowly coupled way. It accomplishes this by having a `listener' interface
-    that all objects which wish to listen to the publisher must implement. You
-    then add a method on the publisher that allows it to dynamically register
-    various listeners, which will then be notified when a corresponding event
-    occurs.  This is very useful, because it allows your publisher and listener
-    classes to be almost entirely decoupled from each other, even though they
-    are directly communicating.\\
-    A basic example of the Observer pattern is an event-based windowing manager,
-    wherein the manager is the publisher and the individual windows are all
-    listeners that will be notified (and often have their thread awoken) when an
-    event (i.e. window resizing or redrawing) is fired.\\
-    The Observer pattern is often featured as a key part of
-    Model-View-Controller architectures.
-    \newpage
     \subsection{Controller Pattern}
     The Controller pattern is one of the most important GRASP design patterns.
     It is intended to solve the problem of determining which class should be the
